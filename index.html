@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>David | Freelance Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1 class="hover-glow">
+            David <span class="freelancer">Freelancer</span>
+        </h1>
+    </header>
+
+    <nav>
+        <a href="#" class="btn-modern" data-section="about">About</a>
+        <a href="#" class="btn-modern" data-section="projects">Projects</a>
+        <a href="#" class="btn-modern" data-section="contact">Contact</a>
+    </nav>
+
+    <main>
+        <section id="about" class="content-section active">
+            <h2 class="hover-glow">About Me</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    Passionate about visual storytelling and conversion-focused design, I'm <strong>David</strong>, a freelance designer specializing in:
+                </p>
+                <ul class="specialties-list">
+                    <li>
+                        <span class="specialty-btn">Modern Logo Design</span>: 
+                        <span class="specialty-description">Crafting unique, memorable brand identities that stand out.</span>
+                    </li>
+                    <li>
+                        <span class="specialty-btn">High-Converting Landing Pages</span>: 
+                        <span class="specialty-description">Designing sleek, user-friendly interfaces that drive results.</span>
+                    </li>
+                </ul>
+                <p class="about-text">
+                    I blend <span class="highlight">aesthetic appeal</span> with <span class="highlight">strategic thinking</span> to create designs that not only look great but perform even better.
+                </p>
+                <p class="availability">
+                    Available for collaborations and ambitious projects. <span class="highlight">✨</span>
+                </p>
+            </div>
+        </section>
+
+        <section id="projects" class="content-section">
+            <h2 class="hover-glow">Recent Projects</h2>
+            <div class="project-tabs">
+                <button class="project-tab active" data-project-type="logos">Logos</button>
+                <button class="project-tab" data-project-type="web-site">Websites</button>
+            </div>
+
+            <div id="logos" class="project-type active">
+                <div class="projects-grid">
+                    <div class="project">
+                        <img src="project1.jpg" alt="Logo Project 1" />
+                    </div>
+                    <div class="project">
+                        <img src="project2.jpg" alt="Logo Project 2" />
+                    </div>
+                    <div class="project">
+                        <img src="project3.jpg" alt="Logo Project 3" />
+                    </div>
+                    <div class="project">
+                        <img src="project4.png" alt="Logo Project 4" />
+                    </div>
+                    <div class="project">
+                        <img src="project5.png" alt="Logo Project 5" />
+                    </div>
+                    <div class="project">
+                        <img src="project6.png" alt="Logo Project 6" />
+                    </div>
+                    <div class="project">
+                        <img src="project7.png" alt="Logo Project 7" />
+                    </div>
+                </div>
+            </div>
+            <div id="web-site" class="project-type" style="display:none;">
+                <div class="projects-grid">
+                    <div class="project" onclick="window.location.href='website1.html'" style="cursor:pointer;">
+                        <img src="website1.png" alt="Website Project 1" />
+                        <div class="project-title">Website 1</div>
+                    </div>
+                    <div class="project" onclick="window.location.href='website2.html'" style="cursor:pointer;">
+                        <img src="website2.png" alt="Website Project 2" />
+                        <div class="project-title">Website 2</div>
+                    </div>
+                    <div class="project" onclick="window.location.href='website3.html'" style="cursor:pointer;">
+                        <img src="website3.png" alt="Website Project 3" style="object-fit:cover; border-radius:18px;" />
+                        <div class="project-title">Website 3</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section">
+            <h2 class="hover-glow">Contact</h2>
+            <div class="contact-content">
+                <p class="contact-email">
+                    📧 <a href="mailto:david.freelance8551@gmail.com" class="email-link">david.freelance8551@gmail.com</a>
+                </p>
+                <p class="contact-cta">
+                    Ready to start your project? <span class="highlight">Let's talk!</span>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 David - All rights reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    // Tab switching logic for projects
+    document.querySelectorAll('.project-tab').forEach(function(tab) {
+        tab.addEventListener('click', function() {
+            document.querySelectorAll('.project-tab').forEach(function(t) { t.classList.remove('active'); });
+            tab.classList.add('active');
+            document.querySelectorAll('.project-type').forEach(function(pt) { pt.style.display = 'none'; });
+            var type = tab.getAttribute('data-project-type');
+            if(type) {
+                var section = document.getElementById(type);
+                if(section) section.style.display = '';
+            }
+        });
+    });
+    </script>
+</body>
+</html>
